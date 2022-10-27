@@ -28,7 +28,7 @@ jobs:
       # Installs dependencies
       - name: Install dependencies
         run: |
-          pip install selenium webdriver_manager
+          pip install selenium webdriver_py
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install ./google-chrome-stable_current_amd64.deb
           
