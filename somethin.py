@@ -13,8 +13,9 @@ service = Service(executable_path=ChromeDriverManager().install())
 
 driver = webdriver.Chrome(service=service,options=options)
 driver.get("https://www.cincinnati.com/story/sports/high-school/high-school-sports/2022/10/25/vote-cincinnati-enquirer-high-school-athletes-of-the-week-oct-24/69585959007/")
-survey = driver.find_element(By.ID, "PDI_answer51312243")
-button = driver.find_element(By.ID, "pd-vote-button11227228")
+survey = driver.find_element(By.XPATH, "/html/body/div/form/div/div/div/div/div[2]/span")
+surveyclicker = survey.find_element(By.ID, "PDI_answer51312243")
+button = driver.find_element(By.XPATH, "/html/body/div/form/div/div/div/div/div[3]/div/button")
 
-survey.click()
+surveyclicker.click()
 button.click()
