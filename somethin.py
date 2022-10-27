@@ -1,3 +1,4 @@
+from termios import B1000000
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver import ChromeOptions
@@ -16,9 +17,9 @@ driver.get("https://www.cincinnati.com/story/sports/high-school/high-school-spor
 #/html/body/div[2]/main/article/div[4]/aside[13]/iframe
 test = driver.find_element(By.XPATH, "/html/body/div[2]/main/article/div[4]/aside[13]")
 #frame = test.find_element(By.CLASS_NAME, "gnt_em_hf_if")
-print()
 driver.switch_to.frame(12)
 #survey = driver.find_element(By.XPATH, "/html/body/div/form/div/div/div/div/div[2]/span")
+test = driver.find_element(By.XPATH, "/html/body/div/form/div/div/div/div/div[2]/span/div[1]")
 surveyclicker = driver.find_element(By.ID, "PDI_answer51312243")
 button = driver.find_element(By.ID, "pd-vote-button11227228")
 
