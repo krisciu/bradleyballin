@@ -19,7 +19,7 @@ test = driver.find_element(By.XPATH, "/html/body/div[2]/main/article/div[4]/asid
 #frame = test.find_element(By.CLASS_NAME, "gnt_em_hf_if")
 driver.switch_to.frame(12)
 #survey = driver.find_element(By.XPATH, "/html/body/div/form/div/div/div/div/div[2]/span")
-test = driver.find_element(By.XPATH, "/html/body/div/form/div/div/div/div/div[2]/span/div[1]")
+test = driver.find_element(By.XPATH, "/html/body")
 surveyclicker = driver.find_element(By.ID, "PDI_answer51312243")
 button = driver.find_element(By.ID, "pd-vote-button11227228")
 
