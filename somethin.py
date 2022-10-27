@@ -7,6 +7,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 options = ChromeOptions()
 options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--headless")
 service = Service(executable_path=ChromeDriverManager().install())
 
 driver = webdriver.Chrome(service=service,options=options)

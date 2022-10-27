@@ -44,6 +44,7 @@ jobs:
           unzip chromedriver_linux64.zip && chmod +x chromedriver && sudo mv chromedriver /usr/local/bin
           chromedriver -version
           pip install selenium webdriver_manager urllib3 requests
+      
           
       - name: perform scrape
         
