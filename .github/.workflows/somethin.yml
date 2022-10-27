@@ -1,0 +1,40 @@
+
+name: dosomethin
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    # runs on ubuntu cause  macos costs money and windows is for scrubs
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Signals run
+      - name: scrape-init
+        run: echo 'init scrape'
+
+      # Installs dependencies
+      - name: Install dependencies
+        run: |
+          pip install selenium webdriver_manager
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install ./google-chrome-stable_current_amd64.deb
+          
+      - name: perform scrape
+        
+        run: |
+          python somethin.py
+    
+
